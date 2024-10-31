@@ -1,0 +1,15 @@
+/*Table Field Order*/
+.owcpv_table_field, 
+.owcpv_table_field th, 
+.owcpv_table_field td {
+	border: 1px solid #ccc !important;
+	border-collapse: collapse;
+	font-size: 12px
+}
+.owcpv_table_field th, 
+.owcpv_table_field td {
+	width: 20%;
+	padding: 1.5em 1em 1em !important;
+	vertical-align: middle !important;
+	text-align: left !important;
+}

@@ -1,0 +1,94 @@
+#woocommerce-product-data ul.wc-tabs li.opal-product-tabs_options a {
+    background-color: var(--owcpv-shadow-color);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    transition: all 0.1s linear;
+    &:hover {
+        background-color: var(--owcpv-primary-color);
+    }
+    &::before {
+        content: '\f116';
+    }
+}
+#opal-product-tabs {
+    .opal-section-tab {
+        padding: 20px;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .opal-wrapper-section {
+        flex: 0 0 49%;
+        border: 1px solid var(--owcpv-border-color);
+        border-radius: 5px;
+        overflow: hidden;
+        .opal-section-header {
+            padding: 20px;
+            font-size: 15px;
+            color: var(--owcpv-primary-color);
+            background-color: #f5f7fa;
+        }
+        .opal-checkbox-form {
+            height: 300px;
+            overflow-y: auto;
+        }
+        .owcpv_form {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px !important;
+            margin: 0;
+            border-top: 1px solid #cccccc59;
+            &:hover {
+              background-color: #eaeaea;
+            }
+
+            label {
+                float: unset;
+                margin: 0 0 0 10px;
+                width: auto;
+            }
+            input {
+                float: unset;
+                order: -1;
+            }
+        }
+        .opal-list-selected-form {
+            margin: 0;
+            list-style: none;
+            padding: 0 20px 20px;
+            background-color: #f5f7fa;
+            li {
+                background-color: #fff;
+                border: 1px solid var(--owcpv-shadow-color);
+                border-radius: 5px;
+                cursor: grab;
+                font-weight: 600;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                &.ui-sortable-helper {
+                    background-color: var(--owcpv-shadow-color);
+                    color: #fff;
+                }
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .handle_sort {
+                    padding: 12px 15px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    &::after {
+                        content: "\f079";
+                        font-family: "Font Awesome 5 Free";
+                    }
+                }
+            }
+        }
+        .opal-no-form {
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+    }
+}

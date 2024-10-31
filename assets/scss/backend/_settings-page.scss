@@ -1,0 +1,116 @@
+.owcpv_wrap_settings {
+	display: flex;
+	margin-top: 30px;
+
+    .owcpv_g_set_tabcontents {
+        flex: 0 0 60%;
+        padding: 30px;
+        background-color: #fff;
+        border-radius: 7px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+    }
+    .owcpv_g_set_tabs {
+        flex: 0 0 300px;
+        margin: 0;
+        li {
+            margin-bottom: 15px;
+            padding-right: 30px;
+            a {
+                text-decoration: none;
+                padding: 15px 20px;
+                font-size: 15px;
+                color: #464646;
+                display: inline-flex;
+                width: 100%;
+                box-sizing: border-box;
+                transition: all 0.2s linear;
+                outline: unset !important;
+                box-shadow: unset;
+                img {
+                    margin-right: 10px;
+                }
+
+                &.active, &:hover {
+                    box-shadow: 0px 1px 5px rgba(0,0,0,0.2);
+                    border-radius: 8px;
+                    color: #f25a87;
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    .options_group {
+        &:not(:last-child) {
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f2f0f0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+        h3 {
+            margin: 0 0 10px 0;
+        }
+    }
+    .owcpv_setting_form {
+        &:not(.owcpv_flex_row_reverse) label {
+            margin-bottom: 4px;
+            display: inline-block;
+        }
+        &.remove_label_field label {
+            display: none;
+        }
+    }
+}
+
+.owcpv_wrap_action_button {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.owcpv_header_settings {
+  	margin-bottom: 50px;
+    .owcpv_title_page {
+        font-weight: 500;
+        font-size: 30px;
+        color: #172a68;
+    }
+    .owcpv_subtitle_page {
+        margin: 10px 0 0 0;
+        opacity: 0.8;
+        font-weight: 500;
+    }
+}
+
+#owcpv_import_export {
+    .options_group {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+        padding-bottom: 30px;
+        .owcpv_group_option {
+            display: flex;
+            align-items: flex-start;
+            img {
+                margin-right: 30px;
+            }
+            
+        }
+    }
+
+}
+#owcpv-import-form-settings .owcpv_field_wrap {
+    padding: 10px;
+	background-color: #f4f4f4;
+	border-radius: 10px;
+}
+
+body.opal-product_page_owcpv-settings {
+    background-color: #f5f7fa;
+}

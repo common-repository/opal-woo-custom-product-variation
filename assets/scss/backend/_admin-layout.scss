@@ -1,0 +1,212 @@
+.owcpv_overflow_sidebar {
+	background: rgba(255, 255, 255, 0.3);
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 9;
+	display: none;
+    &.show-sidebar {
+        display: block;
+
+        & + #side-sortables {
+            right: 0;
+        }
+    }
+    & + #side-sortables {
+        position: fixed;
+        right: -450px;
+        width: 450px;
+        top: 0;
+        height: 100vh;
+        z-index: 999999;
+        background-color: var(--wc-secondary);
+        padding: 20px;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.5s ease-in-out;
+        overflow-y: auto;
+        .postbox-header {
+            border: none;
+            .hndle {
+                cursor: pointer;
+            }
+        }
+        .postbox {
+            border: none;
+            padding: 10px;
+        }
+        #major-publishing-actions {
+            background: transparent;
+            border: none;
+        }
+        #minor-publishing {
+            #misc-publishing-actions {
+                display: none;
+            }
+        }
+        #minor-publishing-actions {
+            #save-action {
+                display: none;
+            }
+            .owcpv_box_toggle_button {
+                text-align: left;
+            }
+        }
+    }
+}
+
+.owcpv_setting_metabox:not(:last-child) {
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e6e3e3;
+}
+
+.owcpv_setting_metabox {
+    .options_group {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+            padding-bottom: 0;
+        }
+        & > ul {
+            margin-top: 5px;
+        }
+        & > h3 {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 0px;
+        }
+        label {
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+    }
+}
+
+.setting_hidden {
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+//Admin Header
+.wrap.owcpv_admin_header {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 40px 20px 30px 2px;
+    
+    & + .wrap > h1 {
+        display: none;
+
+        & + .page-title-action {
+            display: none;
+        }
+    }
+
+    .owcpv_dummy_box {
+        display: flex;
+        flex-wrap: wrap;
+        .page-title-action {
+            top: unset;
+            margin-left: 10px;
+        }
+    }
+
+    .wp-heading-inline {
+        padding: 0;
+    }
+}
+
+#owcpv-form-import {
+	margin-bottom: 30px;
+
+    #owcpv-import-form-inputs {
+        padding: 30px 50px;
+        background-color: #fff;
+        border: 1px dashed var(--owcpv-border-color);
+    }
+}
+#owcpv-box-import-fields {
+	width: 40%;
+	margin: 50px auto;
+	background-color: #fff;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+	padding: 30px;
+
+    .mfp-close {
+        background-color: #c0001a;
+        color: #fff;
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+.owcpv_heading_import {
+	margin-top: 0;
+}
+.owcpv_sample_fields {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 15px -10px 0;
+	box-sizing: border-box;
+
+    * {
+        box-sizing: border-box;
+    }
+    .owcpv_sample_field {
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 10px;
+        margin-bottom: 20px;
+
+        label {
+            display: block;
+            padding: 10px;
+            border: 1px dashed var(--owcpv-border-color);
+            height: 100%;
+
+            &:hover {
+                border-color: var(--owcpv-primary-color);
+                box-shadow: 0 0 5px rgba(0,0,0,0.3);
+            }
+            strong {
+                display: block;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+.column-form_products {
+    width: 25%;
+    
+    .owcpv_preview_products_applied {
+        display: flex;
+        flex-wrap: wrap;
+        padding-right: 15%;
+    
+        li {
+            margin: 0 3px 3px 0;
+    
+            a {
+                padding: 5px 10px;
+                background-color: var(--owcpv-primary-color);
+                color: #fff;
+                border-radius: 30px;
+                font-size: 11px;
+                display: inline-block;
+            }
+        }
+    }
+}
+

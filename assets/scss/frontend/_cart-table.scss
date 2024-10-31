@@ -1,0 +1,105 @@
+.owcpv_field_option {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 0;
+    & > img {
+        margin-right: 5px;
+        height: 70px;
+        object-fit: cover;
+        position: relative !important;
+    }
+    .owcpv_field_label {
+        margin-right: 5px;
+    }
+}
+
+.cart_item dl.variation dt,
+.mini_cart_item dl.variation dt {
+    float: unset;
+    margin-top: 10px;
+    font-weight: 600;
+    color: var(--owcpv-primary-color);
+}
+.cart_item dl.variation dd,
+.mini_cart_item dl.variation dd {
+    font-weight: 600;
+}
+
+.owcpv_price_summary {
+    ul {
+        list-style: none;
+        width: 100%;
+        li {
+            margin-bottom: 0;
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+}
+
+.shop_table ul.wc-item-meta li {
+    margin-bottom: 15px;
+}
+
+// Cart Edit
+.owcpv_edit_cartitem {
+    margin-top: 5px;
+    display: block;
+    width: max-content;
+    font-size: 10px;
+    background-color: var(--owcpv-primary-color);
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 4px;
+    &:hover {
+        background-color: var(--owcpv-secondary-color);
+        color: #fff;
+    }
+}
+.owcpv_cart_edit {
+    border-radius: 10px;
+    max-width: 600px;
+    position: relative;
+    margin: 20px auto;
+    background-color: #fff;
+    .owcpv_header_form {
+        border-bottom: 1px solid var(--owcpv-border-color);
+        padding: 15px 20px 0;
+    }
+    .owcpv_price_summary > ul {
+        margin: 10px 0;
+        & > li {
+            margin-bottom: 0;
+            &:last-child {
+                border: none;
+            }
+            .owcpv_price_outer {
+                font-size: 16px;
+            }
+        }
+    }
+    .owcpv_body_form {
+        padding: 0 20px;
+    }
+    .owcpv_footer_form {
+        display: flex;
+        justify-content: flex-end;
+        padding: 10px 20px;
+        border-top: 1px solid var(--owcpv-border-color);
+        font-size: 14px;
+        .footer_form_btn {
+            padding: 5px 15px;
+            border: 1px solid var(--owcpv-primary-color);
+            border-radius: 5px;
+            &#update-cart-btn {
+                background-color: var(--owcpv-primary-color);
+                color: #fff;
+                margin-left: 10px;
+            }
+        }
+    }
+}

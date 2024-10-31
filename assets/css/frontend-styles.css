@@ -1,0 +1,638 @@
+/*-------------------------------------------------------------
+1. Mixin
+--------------------------------------------------------------*/
+:root {
+  --owcpv-primary-color: #172a68;
+  --owcpv-secondary-color: #f25a87;
+  --owcpv-border-color: #cccccc;
+  --owcpv-shadow-color: #36b97e;
+}
+
+.owcpv_hidden {
+  display: none !important;
+}
+
+.owcpv-flex {
+  display: flex;
+}
+
+.owcpv_flex_row_reverse {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+.owcpv_flex_align_items_center {
+  align-items: center;
+}
+
+.mt {
+  margin-top: 30px;
+}
+
+.mb {
+  margin-bottom: 30px;
+}
+
+.owcpv_hidden_line {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.owcpv_toggle {
+  cursor: pointer;
+  display: inline-flex;
+  margin: 5px 0;
+  align-items: center;
+}
+.owcpv_toggle .owpcv_toggle_input {
+  position: absolute;
+  visibility: hidden;
+  box-shadow: none !important;
+  outline: none !important;
+}
+.owcpv_toggle .owpcv_toggle_input:checked + .owcpv_toggle_switch {
+  background: var(--owcpv-primary-color);
+}
+.owcpv_toggle .owpcv_toggle_input:checked + .owcpv_toggle_switch::before {
+  left: 23px;
+}
+.owcpv_toggle .owcpv_toggle_switch {
+  display: inline-block;
+  background: rgba(10, 9, 89, 0.08);
+  border-radius: 16px;
+  width: 46px;
+  height: 26px;
+  position: relative;
+  vertical-align: middle;
+  transition: background 0.25s;
+  margin-right: 15px;
+}
+.owcpv_toggle .owcpv_toggle_switch::before {
+  display: block;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 3px;
+  transition: all 0.25s ease;
+  content: "";
+}
+
+/*-------------------------------------------------------------
+2. Form Render Editor
+--------------------------------------------------------------*/
+.formbuilder-radio.owcpv_custom_radio_group {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 10px 0;
+}
+.formbuilder-radio.owcpv_custom_radio_group .img_group_preview img {
+  display: block;
+  height: 70px;
+  object-fit: cover;
+}
+.formbuilder-radio.owcpv_custom_radio_group .color_group_preview {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.formbuilder-radio.owcpv_custom_radio_group input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+.formbuilder-radio.owcpv_custom_radio_group input[type=radio]:checked + .img_group_preview, .formbuilder-radio.owcpv_custom_radio_group input[type=radio]:checked + .color_group_preview {
+  box-shadow: 0 0 5px 1px var(--owcpv-shadow-color);
+}
+.formbuilder-radio.owcpv_custom_radio_group input[type=radio]:checked + .img_group_preview + label, .formbuilder-radio.owcpv_custom_radio_group input[type=radio]:checked + .color_group_preview + label {
+  color: var(--owcpv-secondary-color);
+}
+.formbuilder-radio.owcpv_custom_radio_group input[type=radio][radiosubtype=button-option] + label {
+  padding: 8px 10px;
+  border: 1px solid var(--owcpv-border-color);
+  border-radius: 5px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.formbuilder-radio.owcpv_custom_radio_group input[type=radio][radiosubtype=button-option]:checked + label {
+  border-color: var(--owcpv-secondary-color);
+  color: var(--owcpv-secondary-color);
+}
+
+.owcpv_item_form {
+  margin-bottom: 30px;
+}
+.owcpv_item_form .owcpv_inner_form {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+.owcpv_item_form .owcpv_inner_form .render-wrap {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 10px;
+}
+.owcpv_item_form .rendered-form .qq-gallery .qq-total-progress-bar-container {
+  width: 100%;
+}
+.owcpv_item_form .rendered-form label.field-label {
+  font-weight: 500;
+  color: var(--owcpv-primary-color);
+  margin-bottom: 5px;
+  display: flex;
+}
+.owcpv_item_form .rendered-form .formbuilder-separator label.field-label {
+  display: none;
+}
+.owcpv_item_form .rendered-form .formbuilder-separator .form-control {
+  padding: 0 !important;
+  border: none !important;
+}
+
+.owcpv_wrapper .owcpv_box_toggle_button .owcpv_toggle {
+  margin: -6px 0 18px;
+}
+.owcpv_wrapper .owcpv_box_toggle_button label {
+  font-size: 16px;
+  font-weight: 600;
+}
+.owcpv_wrapper .owcpv_box_toggle_button .owcpv_toggle_switch {
+  width: 58px;
+  height: 30px;
+  margin-right: 18px;
+}
+.owcpv_wrapper .owcpv_box_toggle_button .owcpv_toggle_switch:before {
+  left: 5px;
+}
+.owcpv_wrapper .owcpv_box_toggle_button .owcpv_toggle .owpcv_toggle_input:checked + .owcpv_toggle_switch:before {
+  left: 33px;
+}
+.owcpv_wrapper .owcpv_box_toggle_button .owcpv_toggle .owpcv_toggle_input:checked + .owcpv_toggle_switch {
+  background: var(--owcpv-primary-color);
+}
+.owcpv_wrapper .owcpv_box_toggle_button .owcpv_toggle_switch {
+  margin-left: 0;
+}
+.owcpv_wrapper .owcpv_inner_form .form-group {
+  margin-bottom: 21px;
+}
+.owcpv_wrapper .owcpv_inner_form .form-group .form-control {
+  border-radius: 0;
+}
+.owcpv_wrapper .owcpv_inner_form .form-group .form-control:focus {
+  border-color: var(--owcpv-primary-color);
+}
+.owcpv_wrapper .owcpv_inner_form .form-group input[type=color] {
+  border-radius: 4px;
+}
+.owcpv_wrapper .owcpv_inner_form .form-group.button-option .radio-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+.owcpv_wrapper .owcpv_inner_form .form-group.button-option .radio-group .formbuilder-radio {
+  margin: 0 5px 5px 0;
+}
+.owcpv_wrapper .owcpv_inner_form .field-label {
+  color: var(--owcpv-secondary-color);
+  font-weight: 600;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.owcpv_wrapper .owcpv_inner_form .form-control:not(textarea, input[type=radio], input[type=checkbox], input[type=color]) {
+  height: 44px;
+  padding: 6px 18px;
+  border-radius: 0;
+  border: 1px solid var(--owcpv-border-color);
+}
+.owcpv_wrapper .owcpv_inner_form .render-wrap:last-child .form-group {
+  margin-bottom: 0;
+}
+.owcpv_wrapper .formbuilder-radio-group .formbuilder-radio {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+.owcpv_wrapper .formbuilder-radio-group .formbuilder-radio label {
+  font-size: 14px;
+}
+.owcpv_wrapper .formbuilder-radio-group .owcpv_clear_field {
+  font-size: 14px;
+  margin-top: 10px;
+  display: inline-block;
+}
+.owcpv_wrapper .formbuilder-radio-group.ui-selector .ui-selector-resuilt {
+  border: 1px solid var(--owcpv-border-color);
+  min-height: 50px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+.owcpv_wrapper .formbuilder-radio-group.ui-selector .ui-selector-resuilt + .radio-group {
+  margin-top: 10px;
+}
+.owcpv_wrapper .formbuilder-radio-group.ui-selector .ui-selector-resuilt .owcpv_option_val {
+  margin-right: 10px;
+}
+.owcpv_wrapper .formbuilder-radio-group.ui-selector .ui-selector-resuilt .owcpv_option_val.owcpv_color_select {
+  display: inline-block;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+}
+.owcpv_wrapper .formbuilder-radio-group.color-option .formbuilder-radio {
+  margin: 0;
+}
+.owcpv_wrapper .formbuilder-radio-group.color-option .field-label {
+  font-size: 16px;
+  line-height: 30px;
+  margin-bottom: 7px;
+}
+.owcpv_wrapper .formbuilder-radio-group.color-option label {
+  font-size: 14px;
+}
+.owcpv_wrapper .formbuilder-radio-group.color-option .color_group_preview {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 20px;
+  border: 1px solid var(--owcpv-border-color);
+  margin-left: 6px;
+}
+.owcpv_wrapper .formbuilder-radio-group.color-option .color_group_preview:before {
+  position: absolute;
+  content: "";
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--owcpv-border-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.owcpv_wrapper .formbuilder-radio-group.color-option .formbuilder-radio.owcpv_custom_radio_group input[type=radio]:checked + .color_group_preview {
+  box-shadow: none;
+}
+.owcpv_wrapper .formbuilder-radio-group.color-option .formbuilder-radio.owcpv_custom_radio_group input[type=radio]:checked + .color_group_preview:before {
+  border: 1px solid var(--owcpv-secondary-color);
+}
+.owcpv_wrapper .image-option .formbuilder-radio, .owcpv_wrapper .image-extra .formbuilder-radio {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 5px;
+  word-break: break-word;
+  text-align: center;
+  border: 1px solid var(--owcpv-border-color);
+  margin: 0;
+}
+.owcpv_wrapper .image-option .radio-group, .owcpv_wrapper .image-extra .radio-group {
+  padding: 0;
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+@media only screen and (max-width: 1024px) {
+  .owcpv_wrapper .image-option .radio-group, .owcpv_wrapper .image-extra .radio-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.owcpv_wrapper .formbuilder-checkbox-group .formbuilder-checkbox {
+  display: flex;
+  align-items: center;
+}
+.owcpv_wrapper .qq-gallery.qq-uploader {
+  margin-top: -6px;
+}
+.owcpv_wrapper .img_group_preview {
+  border: 1px solid transparent;
+  width: 70px;
+  height: 70px;
+  position: relative;
+}
+.owcpv_wrapper .img_group_preview img {
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.owcpv_wrapper .img_group_preview .owcpv_show_preview {
+  position: absolute;
+  z-index: 9;
+  bottom: 0;
+  right: 0;
+  color: #ccc;
+  background-color: rgba(255, 255, 255, 0.8);
+  width: 25px;
+  height: 25px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--owcpv-border-color);
+}
+.owcpv_wrapper .img_group_preview .owcpv_show_preview:hover {
+  color: var(--owcpv-primary-color);
+}
+.owcpv_wrapper .formbuilder-radio.owcpv_custom_radio_group input[type=radio]:checked + .img_group_preview {
+  box-shadow: none;
+  border: 1px solid var(--owcpv-primary-color);
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader {
+  margin-top: 0;
+  min-height: 100px;
+  max-height: unset;
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px dashed var(--owcpv-border-color);
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader:before {
+  position: absolute;
+  font-size: 16px;
+  color: #ccc;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  bottom: 5px;
+  opacity: 1;
+  top: unset;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-button {
+  position: absolute !important;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  box-shadow: none;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-button div {
+  display: none;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-button:before {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ccc;
+  font-size: 30px;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list {
+  padding: 0;
+  max-height: unset;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li {
+  margin: 0;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-success, .owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-retryable {
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  max-width: 100%;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-success .qq-file-info .qq-upload-file, .owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-retryable .qq-file-info .qq-upload-file {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  white-space: normal;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-success button:after, .owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-retryable button:after {
+  display: none;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-success .qq-upload-cancel, .owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-retryable .qq-upload-cancel {
+  display: none;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-success .qq-progress-bar, .owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-upload-list li.qq-upload-retryable .qq-progress-bar {
+  display: none;
+}
+.owcpv_wrapper .formbuilder-file .qq-gallery.qq-uploader .qq-file-info button:after {
+  display: none;
+}
+
+.owcpv_price_summary {
+  border: 1px solid var(--owcpv-border-color);
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.owcpv_price_summary ul {
+  margin: 0;
+}
+.owcpv_price_summary li {
+  border: 0;
+  padding: 0;
+  margin-left: 0 !important;
+}
+.owcpv_price_summary .owcpv_total {
+  border-top: 1px solid var(--owcpv-border-color);
+  padding: 16px 0 11px;
+  margin-top: 15px;
+}
+.owcpv_price_summary .owcpv_total span {
+  font-size: 16px;
+}
+.owcpv_price_summary .owcpv_total .woocommerce-Price-currencySymbol,
+.owcpv_price_summary .owcpv_total .wrap_price {
+  font-size: 24px;
+}
+.owcpv_price_summary .woocommerce-Price-amount,
+.owcpv_price_summary .owcpv_price_outer {
+  font-size: 16px;
+}
+
+.owcpv_popup_preview {
+  border-radius: 10px;
+  max-width: 600px;
+  position: relative;
+  margin: 20px auto;
+  background-color: #fff;
+}
+.owcpv_popup_preview .owcpv_header_popup {
+  border-bottom: 1px solid var(--owcpv-border-color);
+  padding: 15px 20px 0;
+}
+.owcpv_popup_preview .owcpv_header_popup h4 {
+  font-size: 18px;
+}
+.owcpv_popup_preview .owcpv_body_popup {
+  padding: 30px 20px;
+}
+.owcpv_popup_preview .owcpv_body_popup .slides {
+  list-style: none;
+  margin: 0;
+}
+.owcpv_popup_preview .owcpv_body_popup .slides li .preview_inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.owcpv_popup_preview .owcpv_footer_popup {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  border-top: 1px solid var(--owcpv-border-color);
+  font-size: 14px;
+}
+.owcpv_popup_preview .owcpv_footer_popup .footer_popup_btn {
+  padding: 5px 15px;
+  border: 1px solid var(--owcpv-primary-color);
+  border-radius: 5px;
+}
+.owcpv_popup_preview .owcpv_footer_popup .footer_popup_btn#select-option-btn {
+  background-color: var(--owcpv-primary-color);
+  color: #fff;
+  margin-left: 10px;
+}
+
+.wrapper_slider {
+  position: relative;
+}
+.wrapper_slider .slides {
+  list-style: none;
+  margin: 0;
+}
+.wrapper_slider .flex-control-nav {
+  display: none;
+}
+.wrapper_slider .custom-navigation > a {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+.wrapper_slider .custom-navigation > a.flex-next {
+  right: 10px;
+  left: unset;
+}
+
+.hide_label_color .radio-group {
+  display: flex;
+  margin: 15px 0;
+}
+.hide_label_color .radio-group .color_group_preview + label {
+  display: none;
+}
+
+/*-------------------------------------------------------------
+3. Cart & Checkout
+--------------------------------------------------------------*/
+.owcpv_field_option {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.owcpv_field_option > img {
+  margin-right: 5px;
+  height: 70px;
+  object-fit: cover;
+  position: relative !important;
+}
+.owcpv_field_option .owcpv_field_label {
+  margin-right: 5px;
+}
+
+.cart_item dl.variation dt,
+.mini_cart_item dl.variation dt {
+  float: unset;
+  margin-top: 10px;
+  font-weight: 600;
+  color: var(--owcpv-primary-color);
+}
+
+.cart_item dl.variation dd,
+.mini_cart_item dl.variation dd {
+  font-weight: 600;
+}
+
+.owcpv_price_summary ul {
+  list-style: none;
+  width: 100%;
+}
+.owcpv_price_summary ul li {
+  margin-bottom: 0;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.shop_table ul.wc-item-meta li {
+  margin-bottom: 15px;
+}
+
+.owcpv_edit_cartitem {
+  margin-top: 5px;
+  display: block;
+  width: max-content;
+  font-size: 10px;
+  background-color: var(--owcpv-primary-color);
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 4px;
+}
+.owcpv_edit_cartitem:hover {
+  background-color: var(--owcpv-secondary-color);
+  color: #fff;
+}
+
+.owcpv_cart_edit {
+  border-radius: 10px;
+  max-width: 600px;
+  position: relative;
+  margin: 20px auto;
+  background-color: #fff;
+}
+.owcpv_cart_edit .owcpv_header_form {
+  border-bottom: 1px solid var(--owcpv-border-color);
+  padding: 15px 20px 0;
+}
+.owcpv_cart_edit .owcpv_price_summary > ul {
+  margin: 10px 0;
+}
+.owcpv_cart_edit .owcpv_price_summary > ul > li {
+  margin-bottom: 0;
+}
+.owcpv_cart_edit .owcpv_price_summary > ul > li:last-child {
+  border: none;
+}
+.owcpv_cart_edit .owcpv_price_summary > ul > li .owcpv_price_outer {
+  font-size: 16px;
+}
+.owcpv_cart_edit .owcpv_body_form {
+  padding: 0 20px;
+}
+.owcpv_cart_edit .owcpv_footer_form {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  border-top: 1px solid var(--owcpv-border-color);
+  font-size: 14px;
+}
+.owcpv_cart_edit .owcpv_footer_form .footer_form_btn {
+  padding: 5px 15px;
+  border: 1px solid var(--owcpv-primary-color);
+  border-radius: 5px;
+}
+.owcpv_cart_edit .owcpv_footer_form .footer_form_btn#update-cart-btn {
+  background-color: var(--owcpv-primary-color);
+  color: #fff;
+  margin-left: 10px;
+}
